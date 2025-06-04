@@ -1,0 +1,122 @@
+/*
+  style.css : Styles pour la page de création de compte
+  - Fond rose, formulaire centré, champs arrondis
+  - Bouton dynamique (bleu si valide, violet sinon)
+  - Responsive pour mobile
+*/
+
+body {
+  /* Fond général de la page */
+  background: #f8c6f9;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  /* Titre principal avec la police Luckiest Guy et couleur violette */
+  font-family: 'Luckiest Guy', cursive;
+  color: #960894;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
+
+form {
+  /* Bloc formulaire centré, fond clair, bords arrondis, ombre légère */
+  background: #f3e0f2;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px 24px 24px 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(150,8,148,0.07);
+}
+
+.form-group {
+  /* Espacement entre chaque champ */
+  margin-bottom: 22px;
+}
+
+label {
+  /* Style des labels */
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  /* Style des champs de saisie */
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 7px;
+  background: #f3e0f2;
+  font-size: 1rem;
+  margin-bottom: 2px;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  /* Espacement pour la case à cocher */
+  margin-right: 8px;
+}
+
+.checkbox-group {
+  /* Alignement horizontal de la case à cocher et du label */
+  display: flex;
+  align-items: center;
+}
+
+button[type="submit"] {
+  /* Bouton principal : violet par défaut, arrondi, texte blanc */
+  width: 100%;
+  background: #960894;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 13px 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+button[type="submit"]:hover {
+  /* Violet foncé au survol si désactivé */
+  background: #7a066e;
+}
+button[type="submit"]:enabled {
+  /* Bleu vif si tous les champs sont valides */
+  background: #1a4be7;
+}
+button[type="submit"]:enabled:hover {
+  /* Bleu foncé au survol si activé */
+  background: #153bb3;
+}
+button[type="submit"]:disabled {
+  /* Violet pâle et curseur interdit si désactivé */
+  background: #960894;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.error-message {
+  /* Style des messages d'erreur sous chaque champ */
+  color: #d8000c;
+  font-size: 0.95em;
+  margin-top: 2px;
+  min-height: 18px;
+}
+
+@media (max-width: 700px) {
+  /* Responsive : formulaire et titre plus petits sur mobile */
+  form {
+    padding: 18px 6vw;
+    max-width: 98vw;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}
